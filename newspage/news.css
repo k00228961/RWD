@@ -19,15 +19,13 @@ h1 span {
 }
 
 body {
-    padding: 0;
+    padding-bottom: 60px;;
 	margin: 0;
 	font-family: 'Work Sans', sans-serif;
 	font-weight: 400;
 }
 
 header {
-    margin: 0;
-    padding: 0;
     background: var(--background);
     text-align: center;
     position: fixed;
@@ -178,59 +176,29 @@ nav a:hover::before {
 }
 
 /*Content css*/
-#main-content {
-    padding-top: 90px;
-}
-
-article.featured {
-    position: relative;
-    width: 850px;
-    height: 400px;
-    box-shadow: 1px 1px 9px 1px #353535;
-    margin: 0 auto;
-    background-image: url(img/featuredarticle.jpg);
-    background-size: 1120px 773px;;
-    background-repeat: no-repeat;
-    background-position: center;
-    text-align: center;
-}
-
-#div-featured p{
-    position:absolute;
-    text-align: center;
-    background-color: rgb(40, 40, 40, 0.8);
-    color: white;
-    font-size: 2.5em;
-    bottom: 0;
-    left: 0;
-    right: 0;
-}
-
-#div-featured a{
-    text-decoration: none;
-    color: white;
-}
-
-/*below-featured*/
-
-.small-content {
-    padding-top: 30px;
-}
-
-.wrapper {
+.container {
+    height: 50vh;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    grid-gap: 2.5em;
-    grid-auto-rows: minmax(150px, auto);
+    grid-gap: 3px;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-areas: 40px auto 40px;
+    justify-content: center;
 }
 
-.wrapper > div{
-    background: #eee;
-    padding: 1em;
+.feature {
+    grid-column: 1 / -1;
 }
 
-.wrapper > div:nth-child(odd){
-    background: #ddd;
+.feature p {
+    text-align: center;
+}
+
+.menu {
+    grid-column: 1 / 3;
+}
+
+.content {
+    grid-column: 3/-1;
 }
 
 /*Sign up form css*/
@@ -318,7 +286,7 @@ input[type="submit"]:focus
     padding: 40px;
     width: 300px;
     height: 400px;
-    background: url(img/surbimg.jpg);
+    background: url(../img/surbimg.jpg);
     background-size: contain;
     background-position: center;
 }

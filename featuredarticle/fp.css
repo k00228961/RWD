@@ -179,58 +179,62 @@ nav a:hover::before {
 
 /*Content css*/
 #main-content {
-    padding-top: 90px;
+    padding-top: 80px;
 }
 
-article.featured {
-    position: relative;
-    width: 850px;
-    height: 400px;
-    box-shadow: 1px 1px 9px 1px #353535;
-    margin: 0 auto;
-    background-image: url(img/featuredarticle.jpg);
-    background-size: 1120px 773px;;
-    background-repeat: no-repeat;
-    background-position: center;
-    text-align: center;
-}
-
-#div-featured p{
-    position:absolute;
-    text-align: center;
-    background-color: rgb(40, 40, 40, 0.8);
-    color: white;
-    font-size: 2.5em;
-    bottom: 0;
-    left: 0;
-    right: 0;
-}
-
-#div-featured a{
-    text-decoration: none;
-    color: white;
-}
-
-/*below-featured*/
-
-.small-content {
-    padding-top: 30px;
-}
-
-.wrapper {
+#sony {
+    padding: 0.5in 0;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    grid-gap: 2.5em;
-    grid-auto-rows: minmax(150px, auto);
+    grid-template-columns: 1fr 0.5in [start] 1.25in 5in 1.15in [end] 0.5in 1fr;
+    background: linear-gradient(lightblue, white 1in);
 }
 
-.wrapper > div{
-    background: #eee;
-    padding: 1em;
+#sony1 {
+     padding: 0.5in 0;
+    display: grid;
+    grid-template-columns: 1fr 0.5in [start] 1.25in 8in 1.15in [end] 0.5in 1fr;
 }
 
-.wrapper > div:nth-child(odd){
-    background: #ddd;
+figcaption {
+    margin-top: 0.5rem;
+    display: flex;
+    justify-content: center;
+}
+
+.pse3 > img {
+    width: 900px;
+    height: auto;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+article * {
+    grid-column: start / end;
+}
+
+@media (max-width: 8.5in) {
+    article {
+        grid-template-columns: 1fr 5% [start] 15% 60% 15% [end] 5% 1fr;
+    }
+}
+
+#sony > h2, p{
+ margin-bottom: 2.4rem;   
+}
+
+#sony1 > h2, p {
+    margin-bottom: 2.4rem;
+}
+
+article h1 {
+    font: 700 2.0rem/1.2 "Roboto"; 
+    color: hsl(000, 000%, 33%); 
+}
+
+article time {
+    font: 700 1.0rem/1.2 "Roboto"; 
+    color: hsl(250, 100%, 83%);
 }
 
 /*Sign up form css*/
@@ -318,7 +322,7 @@ input[type="submit"]:focus
     padding: 40px;
     width: 300px;
     height: 400px;
-    background: url(img/surbimg.jpg);
+    background: url(../img/surbimg.jpg);
     background-size: contain;
     background-position: center;
 }
