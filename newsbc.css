@@ -1,0 +1,18 @@
+.container > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1em;
+}
+
+.container > div:nth-child(3n) {
+    background-color: teal;
+}
+
+.container > div:nth-child(2n) {
+    background-color: cyan;
+}
+
+.container > div:nth-child(4n) {
+    background-color: green;
+}
