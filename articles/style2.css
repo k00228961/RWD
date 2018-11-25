@@ -24,13 +24,15 @@ h1 a {
 }
 
 body {
-    padding-bottom: 60px;;
+    padding: 0;
 	margin: 0;
 	font-family: 'Work Sans', sans-serif;
 	font-weight: 400;
 }
 
 header {
+    margin: 0;
+    padding: 0;
     background: var(--background);
     text-align: center;
     position: fixed;
@@ -181,29 +183,98 @@ nav a:hover::before {
 }
 
 /*Content css*/
-@use postcss-nested;
-
-@import url("https://fonts.googleapis.com/css?family=Poppins:200,300,800");
-
-.main {
-    box-sizing: border-box;
-    padding: 150px;
-    font-family: "Poppins";
+#main-content {
+    padding-top: 80px;
 }
 
-.cards {
+#sony {
+    padding: 0.5in 0;
+    display: grid;
+    grid-template-columns: 1fr 0.5in [start] 1.25in 5in 1.15in [end] 0.5in 1fr;
+    background: linear-gradient(#FFA07A, white 1in);
+}
+
+#sony1 {
+    padding: 0.5in 0;
+    display: grid;
+    grid-template-columns: 1fr 0.5in [start] 1.25in 8in 1.15in [end] 0.5in 1fr;
+}
+
+figcaption {
+    margin-top: 0.5rem;
     display: flex;
-    flex-flow: row wrap;
     justify-content: center;
 }
 
-.card {
-    display: grid;
-    grid-row-gap: 50px;
-    align-items: start;
-    padding: 50px;
+.tweet {
+    margin-left: auto;
+    margin-right: auto;
+    display: table;
 }
 
+.megamall > img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+article * {
+    grid-column: start / end;
+}
+
+@media (max-width: 8.5in) {
+    article {
+        grid-template-columns: 1fr 5% [start] 15% 60% 15% [end] 5% 1fr;
+    }
+}
+
+#sony > h2, p{
+ margin-bottom: 2.4rem;   
+}
+
+#sony1 > h2, p {
+    margin-bottom: 2.4rem;
+}
+
+article h1 {
+    font: 700 2.0rem/1.2 "Roboto"; 
+    color: hsl(000, 000%, 33%); 
+}
+
+article time {
+    font: 700 1.0rem/1.2 "Roboto"; 
+    color: hsl(250, 100%, 83%);
+}
+
+.next-back {
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+}
+
+.next-back a {
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;
+}
+
+.next-back a:hover {
+    background-color: red;
+    color: white;
+}
+
+.previous{
+    background-color: #282828;
+    color: white;    
+}
+
+.next {
+    background-color: #282828;
+    color: white;
+}
 
 /*Sign up form css*/
 footer{

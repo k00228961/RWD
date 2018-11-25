@@ -24,13 +24,15 @@ h1 a {
 }
 
 body {
-    padding-bottom: 60px;;
+    padding: 0;
 	margin: 0;
 	font-family: 'Work Sans', sans-serif;
 	font-weight: 400;
 }
 
 header {
+    margin: 0;
+    padding: 0;
     background: var(--background);
     text-align: center;
     position: fixed;
@@ -181,32 +183,147 @@ nav a:hover::before {
 }
 
 /*Content css*/
-@use postcss-nested;
-
-@import url("https://fonts.googleapis.com/css?family=Poppins:200,300,800");
-
-.main {
-    box-sizing: border-box;
-    padding: 150px;
-    font-family: "Poppins";
+#main-content {
+    padding-top: 125px;
 }
 
-.cards {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
+article.featured {
+    position: relative;
+    width: 1120px;
+    height: 500px;
+    box-shadow: 1px 1px 9px 1px #353535;
+    margin: 0 auto;
+    background-image: url(img/featuredarticle.jpg);
+    background-size: 1120px 773px;;
+    background-repeat: no-repeat;
+    background-position: center;
+    text-align: center;
+}
+
+#div-featured p{
+    position:absolute;
+    text-align: center;
+    background-color: rgb(40, 40, 40, 0.8);
+    color: white;
+    font-size: 2.5em;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+#div-featured a{
+    text-decoration: none;
+    color: white;
+}
+
+/*main*/
+.container-body {
+    display: grid;
+    grid-template-rows: 5em 50vh auto 30em;
+    grid-template-columns: 1fr 5fr 2fr 1fr;
+    grid-template-areas: 
+        ". . . ." 
+        ". main sidebar ."
+        ". . . . "
+        ". . . .";
+    grid-column-gap: 1.5em;
+}
+
+main {
+    grid-area: main;
+}
+
+aside {
+    grid-area: sidebar;
+    padding: 2em;
 }
 
 .card {
-    display: grid;
-    grid-row-gap: 50px;
-    align-items: start;
-    padding: 50px;
+  display: grid;
+    grid-template:
+    "img title" min-content
+    "img content" auto / 1fr 3fr;
+  grid-column-gap: 1.5em;
+  box-shadow: 0 0 1em rgba(0, 0, 0, 0.5);
+  padding: 1.5em;
+  margin-bottom: 1.5em;
+    background-color: #282828;
+    color: white;
 }
 
+.card-img {
+  grid-area: img;
+  max-width: 100%;
+}
+
+.card-title {
+  grid-area: title;
+  margin: 0;
+  font-weight: 300;
+}
+
+.card-content {
+  grid-area: content;
+  
+  a {
+    color: red;
+    font-size: 1.1em;
+  }
+}
+
+.ads img{
+    display: block;
+    width: 90%;
+    max-height: 100%;
+    height: auto;
+}
+
+aside h1 {
+    justify-content: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.buttons{
+    margin: auto;
+    width: 50%;
+}
+
+.button-success,
+        .button-error,
+        .button-warning,
+        .button-secondary {
+            color: white;
+            border-radius: 4px;
+            text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+        }
+
+        .button-success {
+            background: #282828; 
+        }
+
+ .button-success:hover {
+            background: red; 
+        }
+
+
+.blink_me {
+  animation: blinker 1.5s linear infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+    color: red;
+  }
+}
 
 /*Sign up form css*/
 footer{
+    top: px;
+    position: relative;
+    bottom: 0px;
     margin: 0;
     padding: 0;
     font-size: 16px;

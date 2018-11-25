@@ -24,13 +24,15 @@ h1 a {
 }
 
 body {
-    padding-bottom: 60px;;
+    padding: 0;
 	margin: 0;
 	font-family: 'Work Sans', sans-serif;
 	font-weight: 400;
 }
 
 header {
+    margin: 0;
+    padding: 0;
     background: var(--background);
     text-align: center;
     position: fixed;
@@ -181,32 +183,162 @@ nav a:hover::before {
 }
 
 /*Content css*/
-@use postcss-nested;
-
-@import url("https://fonts.googleapis.com/css?family=Poppins:200,300,800");
-
-.main {
-    box-sizing: border-box;
-    padding: 150px;
-    font-family: "Poppins";
+#main-content {
+    padding-top: 125px;
 }
 
-.cards {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
+article.featured {
+    position: relative;
+    width: 1120px;
+    height: 500px;
+    box-shadow: 1px 1px 9px 1px #353535;
+    margin: 0 auto;
+    background-image: url(img/featuredarticle.jpg);
+    background-size: 1120px 773px;;
+    background-repeat: no-repeat;
+    background-position: center;
+    text-align: center;
 }
 
-.card {
-    display: grid;
-    grid-row-gap: 50px;
-    align-items: start;
-    padding: 50px;
+#div-featured p{
+    position:absolute;
+    text-align: center;
+    background-color: rgb(40, 40, 40, 0.8);
+    color: white;
+    font-size: 2.5em;
+    bottom: 0;
+    left: 0;
+    right: 0;
 }
 
+#div-featured a{
+    text-decoration: none;
+    color: white;
+}
 
+/*main*/
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
+
+/* css class for the edit profile generated errors */
+.profilepress-edit-profile-status {
+  width: 400px;
+  text-align: center;
+  background-color: #e74c3c;
+  color: #ffffff;
+  border: medium none;
+  border-radius: 4px;
+  font-size: 17px;
+  font-weight: normal;
+  line-height: 1.4;
+  padding: 8px 5px;
+  margin: auto;
+}
+
+.memo-edprofile-success {
+  width: 400px;
+  text-align: center;
+  background-color: #2ecc71;
+  color: #ffffff;
+  border: medium none;
+  border-radius: 4px;
+  font-size: 17px;
+  font-weight: normal;
+  line-height: 1.4;
+  padding: 8px 5px;
+  margin: auto;
+}
+
+#sc-edprofile {
+  background: #f0f0f0;
+  width: 400px;
+  margin: 0 auto;
+  margin-top: 8px;
+  margin-bottom: 2%;
+  transition: opacity 1s;
+  -webkit-transition: opacity 1s;
+}
+
+#sc-edprofile h1 {
+  background: red;
+  padding: 20px 0;
+  font-size: 140%;
+  font-weight: 300;
+  text-align: center;
+  color: #fff;
+}
+
+div#sc-edprofile .sc-container {
+  background: #f0f0f0;
+  padding: 6% 4%;
+}
+
+div#sc-edprofile input[type="email"],
+div#sc-edprofile input[type="text"],
+div#sc-edprofile input[type="password"], div#sc-edprofile select, div#sc-edprofile textarea {
+  width: 92%;
+  background: #fff;
+  margin-bottom: 4%;
+  border: 1px solid #ccc;
+  padding: 4%;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 95%;
+  color: #555;
+}
+
+div#sc-edprofile select {
+  width: 100%;
+}
+
+div#sc-edprofile textarea {
+  height: 100px;
+}
+
+.spacer {
+    padding: 10px;
+}
+
+img {
+    padding: 10px;
+    height: auto;
+    width: auto;
+    max-height: 150px;
+    max-width: 150px;
+}
+
+button edit-profile {
+    margin-bottom: 20px;
+    width: 220px;
+    height: 36px;
+    border: none;
+    border-radius: 2px;
+    color: #fff;
+    font-family: sans-serif;
+    font-weight: 500;
+    transition: 0.2s ease;
+    cursor: pointer;
+}
+
+div#sc-edprofile input[type="submit"] {
+  width: 100%;
+  background: #3399cc;
+  border: 0;
+  padding: 4%;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 100%;
+  color: #fff;
+  cursor: pointer;
+  transition: background .3s;
+  -webkit-transition: background .3s;
+}
+
+div#sc-edprofile input[type="submit"]:hover {
+  background: red;
+}
 /*Sign up form css*/
 footer{
+    top: 100px;
+    position: relative;
+    bottom: 0px;
     margin: 0;
     padding: 0;
     font-size: 16px;
@@ -290,7 +422,7 @@ input[type="submit"]:focus
     padding: 40px;
     width: 300px;
     height: 400px;
-    background: url(../img/surbimg.jpg);
+    background: url(img/surbimg.jpg);
     background-size: contain;
     background-position: center;
 }
